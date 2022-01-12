@@ -53,7 +53,7 @@ final class TracingDriverConnectionTest extends DoctrineTestCase
     /**
      * @dataProvider tagsDataProvider
      *
-     * @param array<string, mixed>  $params
+     * @param ConnectionParams      $params
      * @param array<string, string> $expectedTags
      */
     public function testPrepare(array $params, array $expectedTags): void
@@ -108,7 +108,7 @@ final class TracingDriverConnectionTest extends DoctrineTestCase
     /**
      * @dataProvider tagsDataProvider
      *
-     * @param array<string, mixed>  $params
+     * @param ConnectionParams      $params
      * @param array<string, string> $expectedTags
      *
      * @phpstan-param ConnectionParams $params
@@ -173,7 +173,7 @@ final class TracingDriverConnectionTest extends DoctrineTestCase
     /**
      * @dataProvider tagsDataProvider
      *
-     * @param array<string, mixed>  $params
+     * @param ConnectionParams      $params
      * @param array<string, string> $expectedTags
      */
     public function testExec(array $params, array $expectedTags): void
@@ -218,7 +218,7 @@ final class TracingDriverConnectionTest extends DoctrineTestCase
     /**
      * @dataProvider tagsDataProvider
      *
-     * @param array<string, mixed>  $params
+     * @param ConnectionParams      $params
      * @param array<string, string> $expectedTags
      */
     public function testBeginTransaction(array $params, array $expectedTags): void
@@ -263,7 +263,7 @@ final class TracingDriverConnectionTest extends DoctrineTestCase
     /**
      * @dataProvider tagsDataProvider
      *
-     * @param array<string, mixed>  $params
+     * @param ConnectionParams      $params
      * @param array<string, string> $expectedTags
      */
     public function testCommit(array $params, array $expectedTags): void
@@ -308,7 +308,7 @@ final class TracingDriverConnectionTest extends DoctrineTestCase
     /**
      * @dataProvider tagsDataProvider
      *
-     * @param array<string, mixed>  $params
+     * @param ConnectionParams      $params
      * @param array<string, string> $expectedTags
      */
     public function testRollBack(array $params, array $expectedTags): void
@@ -408,7 +408,7 @@ final class TracingDriverConnectionTest extends DoctrineTestCase
     }
 
     /**
-     * @return \Generator<mixed>
+     * @return \Generator<array{ConnectionParams, array<string,string>}>
      */
     public function tagsDataProvider(): \Generator
     {
